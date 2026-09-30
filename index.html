@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Luxurious+Roman&display=swap" rel="stylesheet">
+    <style>
+        html{
+            scroll-behavior:smooth;
+        }
+        body{
+            margin:0;
+            padding-top:60px;
+        }
+        #topbar{
+            display:flex;
+            align-items:center;
+            background-color:rgb(255,255,255);
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:60px;
+        }
+        #logo{
+            margin:0;
+            font-size:30px;
+            font-family:"Luxurious Roman",serif;
+            margin-left:20px;
+        }
+        #left{
+            display:flex;
+            gap:30px;
+            margin-left:370px;
+        }
+        .left1:hover{
+            background-color:rgb(182,125,78);
+            padding:5px 10px;
+            border-radius:15px;
+        }
+        .left1:active{
+            background-color:rgb(205,214,214);
+            border-radius:15px;
+        }
+        .left1{
+            font-size:25px;
+            font-family:"Luxurious Roman",serif;
+            text-decoration:none;
+            color:black;
+            transition:0.2s;
+        }
+        #animation{
+            animation:fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn{
+            from{opacity:0;}
+            to{opacity:1;}
+        }
+        #nothing{
+            height:20px;
+            background-color:rgb(182,125,78);
+        }
+        #home{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            background-image:url("background1.jpg");
+            background-size:cover;
+            background-position:center;
+            height:350px;
+        }
+        #home h1{
+            display:flex;
+            text-align:center;
+            margin:0;
+            color:rgb(251,253,253);
+            font-family:"Luxurious Roman",serif;
+            font-size:50px;
+        }
+        #text{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding-top:5px;
+            text-shadow: 2px 2px #181212;
+        }
+        #me1{
+            margin-top:45px;
+            padding:10px;
+            background-color:white;
+            border:1px solid #ddd;
+            box-shadow:0 3px 8px rgba(0,0,0,0.2);
+        }
+        #nothing1{
+            height:300px;
+            background-color:rgb(205,214,214);
+        }
+        #about{
+            display:flex;
+            height:370px;
+            background-color:rgb(232,232,212);
+            margin-top:30px;
+            margin:0;
+        }
+        #s{
+            margin-left:18px;
+            color:rgb(71, 28, 18)
+            
+        }
+        #text2{
+            width:370px;
+            font-size:21px;
+            margin-top:-15px;
+            margin-left:18px;
+        }s
+        #aboutme{
+            width:25%;
+            margin-top:-20px;
+            box-sizing:border-box;
+            margin:0;
+        }
+        .line{
+            width:2px;
+            height:300px;
+            background-color:black;
+            margin-top:25px;
+        }
+        .aboutme2{
+            width:25%;
+            padding:20px;
+            box-sizing:border-box;
+            margin-top:-20px;
+        }
+        .arrow{
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+            margin-top:-20px;
+        }
+        .arrow h4{
+            margin:0;
+            font-size:30px;
+            font-weight:normal;
+        }
+        .arrow span{
+            color:teal;
+            font-size:35px;
+            margin-right:10px;
+        }
+        #arrow1{
+            display:flex;
+            flex-direction:column;
+            margin-top:-25px;
+            gap:10px;
+        }
+        #arrow1 h4{
+            margin:0;
+            font-size:30px;
+            font-weight:normal;
+        }
+        #arrow1 span{
+            color:teal;
+            font-size:35px;
+            margin-right:10px;
+        }
+        #nothing2{
+            height:40px;
+            background-color:rgb(182,125,78);
+        }
+        #nothing3{
+            height:33px;
+            background-color:rgb(182,125,78);
+        }
+        #certificate{
+            height:350px;
+            background-color:rgb(255,240,245);
+            scroll-margin-top:60px;
+            overflow:hidden;
+            padding-top:20px;
+            box-sizing:border-box;
+        }
+        .certificate-slider{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:15px;
+        }
+        .certificate-window{
+            width:1200px;
+            overflow:hidden;
+        }
+        .certificate-track{
+            display:flex;
+            transition:transform 0.5s ease;
+        }
+        .certificate{
+            width:400px;
+            height:225px;
+            object-fit:cover;
+            padding:5px;
+            box-sizing:border-box;
+            cursor:zoom-in;
+            flex-shrink:0;
+        }
+        .certificate-button{
+            width:45px;
+            height:45px;
+            border:none;
+            border-radius:50%;
+            background-color:rgb(182,125,78);
+            color:white;
+            font-size:25px;
+            cursor:pointer;
+            flex-shrink:0;
+            transition:0.2s;
+        }
+        .certificate-button:hover{
+            background-color:rgb(150,95,55);
+            transform:scale(1.1);
+        }
+        .certificate-button:active{
+            transform:scale(0.9);
+        }
+        #certificateZoom{
+            display:none;
+            position:fixed;
+            z-index:2000;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,0.8);
+            align-items:center;
+            justify-content:center;
+        }
+        #certificateZoom img{
+            max-width:90%;
+            max-height:90%;
+            object-fit:contain;
+            cursor:zoom-out;
+        }
+        .certificate-title {
+            text-align:center;
+            font-family:"Luxurious Roman",serif;
+            font-size:35px;
+            font-weight:bold;
+            margin:0 auto 25px auto;
+            padding-bottom:15px;
+            width:500px;
+            border-bottom:2px solid rgb(182,125,78);   
+        }
+        #nothing4{
+            height:20px;
+            background-color:rgb(182,125,78);
+        }
+        #see{
+            background-color: red;
+            height:200px;
+        }
+        #title{
+            text-align:center;
+            font-family:"Luxurious Roman",serif;
+            font-size:35px;
+            font-weight:bold;
+            margin:0 auto 25px auto;
+            padding-bottom:15px;
+            width:500px;
+            border-bottom:2px solid rgb(182,125,78);
+            margin-top: -150px;
+            
+        }
+        #resume{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:850px;
+            background-color:rgb(232,232,212);
+
+            margin:0;
+        }
+        #resumeimg{
+            margin-top: -10px;
+            width:1024px;
+            height:700px;
+        }
+        #resume1{
+            padding-top: 170px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body id="what">
+    <div id="topbar">
+        <h1 id="logo">VIADO</h1>
+        <div id="left">
+            <a href="#what" class="left1">Home</a>
+            <a href="#nothing2" class="left1">About</a>
+            <a href="#nothing3" class="left1">Certificates</a>
+            <a href="#nothing4" class="left1">Resume</a>
+            <a href="#blank2" class="left1">Services</a>
+            <a href="#blank3" class="left1">Testimonials</a>
+            <a href="#blank4" class="left1">Works</a>
+            <a href="#blank5" class="left1">Contact</a>
+            <a href="#blank6" class="left1">Login</a>
+        </div>
+    </div>
+    <div id="nothing"></div>
+
+
+    <section id="home">
+        <div id="text">
+            <h1 id="animation">Hello my name is Viado<br>and welcome to my<br>Website!</h1>
+        </div>
+        <img src="me.jpg" style="width:300px;" id="me1">
+    </section>
+    <div id="nothing1"></div>
+    <div id="nothing2"></div>
+
+
+    <section id="about">
+        <div id="aboutme">
+            <h1 id="s">About me:</h1>
+            <h4 id="text2">
+                Hi! My name is Nikkolai, and I am a student who is interested in computers, technology, and web development.
+                I enjoy learning how websites are created and experimenting with HTML, CSS, and JavaScript to bring my ideas to life.
+                I am always looking for opportunities to improve my skills, learn new things, and challenge myself with different projects.
+                This website is a collection of my work, interests, and progress as I continue learning and developing my skills.
+            </h4>
+        </div>
+        <div class="line"></div>
+        <div class="aboutme2">
+            <h1>Skills:</h1>
+            <div class="arrow">
+                <h4><span>↓</span>Playing guitar and piano</h4>
+                <h4><span>↓</span>Coding</h4>
+                <h4><span>↓</span>Communication</h4>
+                <h4><span>↓</span>Adaptability</h4>
+                <h4><span>↓</span>Computer literacy</h4>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="aboutme2">
+            <h1>Education:</h1>
+            <div class="arrow">
+                <h4><span>↓</span>Elementry graduate</h4>
+                <h4><span>↓</span>Junior high graduate</h4>
+                <h4><span>↓</span>Currently in Senior high</h4>
+                <h4><span>↓</span>Aiming for IT course in college</h4>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="aboutme2">
+            <h1>Interests:</h1>
+            <div id="arrow1">
+                <h4><span>↓</span>Learning songs and instruments</h4>
+                <h4><span>↓</span>Reading about history</h4>
+                <h4><span>↓</span>watching Anime</h4>
+                <h4 style="width:300px;"><span>↓</span>playing video games like "valorant" or "LoL" to name a few</h4>
+            </div>
+        </div>
+    </section>
+    <div id="nothing3"></div>
+
+    <section id="certificate">
+        <h1 class="certificate-title">Certificates:</h1>
+        <div class="certificate-slider">
+            <button class="certificate-button" onclick="previousCertificate()">←</button>
+            <div class="certificate-window">
+                <div class="certificate-track" id="certificateTrack">
+                    <img class="certificate" src="certi1.jpg" onclick="zoomCertificate(this.src)">
+                    <img class="certificate" src="certi2.jpg" onclick="zoomCertificate(this.src)">
+                    <img class="certificate" src="certi3.jpg" onclick="zoomCertificate(this.src)">
+                    <img class="certificate" src="certi4.jpg" onclick="zoomCertificate(this.src)">
+                    
+                </div>
+            </div>
+            <button class="certificate-button" onclick="nextCertificate()">→</button>
+        </div>
+    </section>
+    <div id="certificateZoom" onclick="closeCertificate()">
+        <img id="zoomedCertificate">
+    </div>
+    <div id="nothing4"></div>
+    <section id="resume">
+        <div id="resume1">
+            <h1 id="title">Resume:</h1>
+            <img src="resumeimg.png" id="resumeimg">
+            
+
+        </div>
+       
+    </section>
+     <div id="se"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+        let currentCertificate=0;
+        const certificateTrack=document.getElementById("certificateTrack");
+        const totalCertificates=4;
+        function updateCarousel(){
+            certificateTrack.style.transform="translateX(-"+(currentCertificate*400)+"px)";
+        }
+        function nextCertificate(){
+            currentCertificate++;
+            if(currentCertificate>=totalCertificates-2){
+                currentCertificate=0;
+            }
+            updateCarousel();
+        }
+        function previousCertificate(){
+            currentCertificate--;
+            if(currentCertificate<0){
+                currentCertificate=totalCertificates-3;
+            }
+            updateCarousel();
+        }
+        function zoomCertificate(image){
+            document.getElementById("zoomedCertificate").src=image;
+            document.getElementById("certificateZoom").style.display="flex";
+        }
+        function closeCertificate(){
+            document.getElementById("certificateZoom").style.display="none";
+        }
+    </script>
+</body>
+</html>
